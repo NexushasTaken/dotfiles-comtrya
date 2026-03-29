@@ -1,0 +1,146 @@
+actions:
+  - action: file.link
+    from: foot/
+    to: "{{ user.config_dir }}/foot"
+    before:
+      - action: package.install
+        name: foot
+
+  - action: file.link
+    from: btop/
+    to: "{{ user.config_dir }}/btop"
+    before:
+      - action: package.install
+        name: btop
+
+  - action: file.link
+    from: bat/
+    to: "{{ user.config_dir }}/bat"
+    before:
+      - action: package.install
+        name: bat
+
+  - action: file.link
+    from: clangd/
+    to: "{{ user.config_dir }}/clangd"
+    # before:
+    #   - action: package.install
+    #     name: clangd
+
+  - action: file.link
+    from: superfile/
+    to: "{{ user.config_dir }}/superfile"
+    before:
+      - action: package.install
+        name: superfile
+
+  - action: file.link
+    from: lazygit/
+    to: "{{ user.config_dir }}/lazygit"
+    before:
+      - action: package.install
+        name: lazygit
+
+  - action: file.link
+    from: dunst/
+    to: "{{ user.config_dir }}/dunst"
+    before:
+      - action: package.install
+        name: dunst
+
+  - action: file.link
+    from: ranger/
+    to: "{{ user.config_dir }}/ranger"
+    before:
+      - action: package.install
+        name: ranger
+
+  - action: file.link
+    from: gdb/
+    to: "{{ user.config_dir }}/gdb"
+    before:
+      - action: package.install
+        name: gdb
+        provider: pacman
+
+  - action: file.link
+    from: tmux/
+    to: "{{ user.config_dir }}/tmux"
+    before:
+      - action: package.install
+        name: tmux
+        provider: pacman
+
+  - action: file.link
+    from: alacritty/
+    to: "{{ user.config_dir }}/alacritty"
+    before:
+      - action: package.install
+        name: alacritty
+        provider: pacman
+
+  - action: file.link
+    from: fish/
+    to: "{{ user.config_dir }}/fish"
+    before:
+      - action: package.install
+        name: fish
+        provider: pacman
+
+# bash: {
+  - action: file.link
+    from: bash/
+    to: "{{ user.config_dir }}/bash"
+
+  - action: file.link
+    from: bash/bashrc.sh
+    to: "{{ user.home_dir }}/.bashrc"
+
+  - action: file.link
+    from: bash/bash_profile.sh
+    to: "{{ user.home_dir }}/.bash_profile"
+# }
+
+  - action: file.link
+    from: .inputrc
+    to: "{{ user.home_dir }}/.inputrc"
+
+  - action: file.link
+    from: git/
+    to: "{{ user.config_dir }}/git"
+    before:
+      - action: package.install
+        name: git
+        provider: pacman
+
+  - action: file.link
+    from: gh/config.yml
+    to: "{{ user.config_dir }}/gh/config.yml"
+    before:
+      - action: package.install
+        name: github-cli
+        provider: pacman
+
+  - action: file.link
+    from: uwsm/
+    to: "{{ user.config_dir }}/uwsm"
+    before:
+      - action: package.install
+        name: uwsm
+        provider: pacman
+
+  - action: file.link
+    from: waybar/
+    to: "{{ user.config_dir }}/waybar"
+    before:
+      - action: package.install
+        name: waybar
+        provider: pacman
+
+  - action: file.link
+    from: hypr/
+    to: "{{ user.config_dir }}/hypr"
+    before:
+      - action: package.install
+        name: waybar
+        provider: pacman
