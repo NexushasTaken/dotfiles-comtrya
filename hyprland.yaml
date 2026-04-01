@@ -22,7 +22,7 @@ actions:
     to: "{{ user.config_dir }}/hypr"
     before:
       - action: package.install
-        name: waybar
+        name: hyprland
         provider: pacman
 
   - action: file.link
