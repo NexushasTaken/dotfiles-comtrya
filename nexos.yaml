@@ -3,3 +3,4 @@ depends:
   - modules.kanata.kanata
   - utils
   - dev-utils
+  - tablet
