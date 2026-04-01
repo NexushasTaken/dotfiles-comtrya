@@ -35,3 +35,10 @@ actions:
     before:
       - action: package.install
         name: ranger
+
+  - action: file.link
+    from: mpv/
+    to: "{{ user.config_dir }}/mpv"
+    before:
+      - action: package.install
+        name: mpv
