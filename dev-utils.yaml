@@ -59,6 +59,11 @@ actions:
       - action: package.install
         name: foot
 
+  - action: file.link
+    from: .cargo/
+    walk_dir: true
+    to: "{{ user.home_dir }}/.cargo"
+
   - action: package.install
     provider: pacman
     list:
