@@ -1,0 +1,58 @@
+
+actions:
+  - action: file.link
+    from: lazygit/
+    to: "{{ user.config_dir }}/lazygit"
+    before:
+      - action: package.install
+        name: lazygit
+
+  - action: file.link
+    from: gdb/
+    to: "{{ user.config_dir }}/gdb"
+    before:
+      - action: package.install
+        name: gdb
+        provider: pacman
+
+  - action: file.link
+    from: tmux/
+    to: "{{ user.config_dir }}/tmux"
+    before:
+      - action: package.install
+        name: tmux
+        provider: pacman
+
+# bash: {
+  - action: file.link
+    from: bash/
+    to: "{{ user.config_dir }}/bash"
+
+  - action: file.link
+    from: bash/bashrc.sh
+    to: "{{ user.home_dir }}/.bashrc"
+
+  - action: file.link
+    from: bash/bash_profile.sh
+    to: "{{ user.home_dir }}/.bash_profile"
+# }
+
+  - action: file.link
+    from: .inputrc
+    to: "{{ user.home_dir }}/.inputrc"
+
+  - action: file.link
+    from: git/
+    to: "{{ user.config_dir }}/git"
+    before:
+      - action: package.install
+        name: git
+        provider: pacman
+
+  - action: file.link
+    from: gh/config.yml
+    to: "{{ user.config_dir }}/gh/config.yml"
+    before:
+      - action: package.install
+        name: github-cli
+        provider: pacman

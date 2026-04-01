@@ -1,0 +1,33 @@
+# yaml-language-server: $schema=https://github.com/NexushasTaken/comtrya/raw/refs/heads/personal/jsonschemagen/schema.json
+
+actions:
+  - action: file.link
+    from: uwsm/
+    to: "{{ user.config_dir }}/uwsm"
+    before:
+      - action: package.install
+        name: uwsm
+        provider: pacman
+
+  - action: file.link
+    from: waybar/
+    to: "{{ user.config_dir }}/waybar"
+    before:
+      - action: package.install
+        name: waybar
+        provider: pacman
+
+  - action: file.link
+    from: hypr/
+    to: "{{ user.config_dir }}/hypr"
+    before:
+      - action: package.install
+        name: waybar
+        provider: pacman
+
+  - action: file.link
+    from: dunst/
+    to: "{{ user.config_dir }}/dunst"
+    before:
+      - action: package.install
+        name: dunst
