@@ -4,3 +4,23 @@ depends:
   - utils
   - dev-utils
   - tablet
+
+actions:
+  - action: package.install
+    provider: pacman
+    list:
+      - ttf-hack-nerd
+      - noto-fonts
+      - noto-fonts-cjk
+      - noto-fonts-emoji
+      - rofi
+      - cliphist
+      - hyprshot
+      - network-manager-applet
+      - udisks2
+      - udiskie
+      - gnome-themes-extra
+      - eom
+      - pavucontrol
+      - xdg-utils
+      - gamemode

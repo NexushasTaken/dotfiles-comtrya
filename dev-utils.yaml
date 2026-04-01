@@ -58,3 +58,18 @@ actions:
     before:
       - action: package.install
         name: foot
+
+  - action: package.install
+    provider: pacman
+    list:
+      - eza
+      - zoxide
+      - fzf
+      - wget
+      - xdg-user-dirs
+      - caja
+      - devhelp
+      - rsync
+      - tldr
+      - unzip
+      - zip
