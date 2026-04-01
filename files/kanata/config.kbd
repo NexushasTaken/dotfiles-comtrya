@@ -1,0 +1,49 @@
+;; vi: ft=lisp nomodifiable
+(defcfg
+ linux-dev-names-exclude (
+    "USB OPTICAL MOUSE"
+    "USB OPTICAL MOUSE "
+    "HUION 420 Mouse"
+    "Evision RGB Keyboard Mouse"
+    "OpenTabletDriver Virtual Mouse"
+    "HUION 420 Keyboard"
+    "OpenTabletDriver Virtual Artist Tablet"
+    "OpenTabletDriver Virtual Keyboard"
+  )
+
+  process-unmapped-keys yes
+)
+
+;;(defsrc
+;;  esc caps
+;;  g
+;;)
+;;(deflayer main
+;;  caps esc
+;;  (tap-hold-release-keys 1000 1000 g h (k))
+;;)
+
+;;(include ./home-row-mod-basic.kbd) ;; doesn't work as expected
+(include ./home-row-mod-advance.kbd)
+
+;; Colemak Niro {{{
+;; (defalias nir (layer-switch colemak_niro))
+;; (deflayer colemak_niro
+;;   caps f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12          ssrq slck @qwe
+;;   grv  1    2    3    4    5    6    7    8    9    0    -    =      bspc  ins  home pgup
+;;   tab    q    w    u    d    p    j    f    y    l    ;    [    ]    \     del  end  pgdn
+;;   esc     a    s    e    t    g    h    n    i    r    o    '        ret
+;;   lsft     z    x    c    v    b    k    m    ,    .    /            rsft       up  
+;;   lctl lmet lalt               spc                    ralt rmet cmp  rctl  left down rght
+;; )
+;; }}}
+;; }}}
+
+;;(defsrc ;; Original
+;;  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12          prnt slck pause
+;;  grv  1    2    3    4    5    6    7    8    9    0    -    =      bks   ins  home pgup
+;;  tab    q    w    e    r    t    y    u    i    o    p    [    ]    \     del  end  pgdn
+;;  caps    a    s    d    f    g    h    j    k    l    ;    '        ret
+;;  lsft     z    x    c    v    b    n    m    ,    .    /            rsft       up  
+;;  lctl lmet lalt               spc                    ralt rmet menu rctl  left down rght
+;;)

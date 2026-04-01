@@ -144,3 +144,7 @@ actions:
       - action: package.install
         name: waybar
         provider: pacman
+
+  - action: file.link
+    from: kanata/
+    to: "{{ user.config_dir }}/kanata"
