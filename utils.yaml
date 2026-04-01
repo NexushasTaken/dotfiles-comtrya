@@ -1,8 +1,5 @@
 # yaml-language-server: $schema=https://github.com/NexushasTaken/comtrya/raw/refs/heads/personal/jsonschemagen/schema.json
 
-depends:
-  - desktop
-
 actions:
   - action: file.link
     from: btop/
@@ -38,12 +35,3 @@ actions:
     before:
       - action: package.install
         name: ranger
-
-  - action: file.link
-    from: fish/
-    to: "{{ user.config_dir }}/fish"
-    before:
-      - action: package.install
-        name: fish
-        provider: pacman
-

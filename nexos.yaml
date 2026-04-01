@@ -1,0 +1,5 @@
+depends:
+  - modules.bash.bash
+  - modules.kanata.kanata
+  - utils
+  - dev-utils

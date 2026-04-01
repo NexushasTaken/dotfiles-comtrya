@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=https://github.com/NexushasTaken/comtrya/raw/refs/heads/personal/jsonschemagen/schema.json
+
+actions:
+  - action: file.link
+    from: ./
+    to: "{{ user.config_dir }}/bash"
+
+  - action: file.link
+    from: ./bashrc.sh
+    to: "{{ user.home_dir }}/.bashrc"
+
+  - action: file.link
+    from: ./bash_profile.sh
+    to: "{{ user.home_dir }}/.bash_profile"

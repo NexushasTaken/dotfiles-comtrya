@@ -2,7 +2,7 @@
 
 actions:
   - action: file.link
-    from: kanata/
+    from: ./
     to: "{{ user.config_dir }}/kanata"
     before:
       - action: plugin
