@@ -5,7 +5,7 @@ local function dir_exist(dirpath)
 end
 
 local function is_git_repo(dirpath)
-  local command = ("cd %s && git rev-parse --is-inside-work-tree"):format(dirpath)
+  local command = ("cd %s && git rev-parse --is-inside-work-tree 1> /dev/null"):format(dirpath)
   local success, _, _ = os.execute(command)
   return success == true
 end
