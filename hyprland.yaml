@@ -22,8 +22,11 @@ actions:
     to: "{{ user.config_dir }}/hypr"
     before:
       - action: package.install
-        name: hyprland
         provider: pacman
+        list:
+          - hyprland
+          - swww
+          - hyprshot
 
   - action: file.link
     from: dunst/
