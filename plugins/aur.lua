@@ -51,8 +51,13 @@ return {
         end
 
         local function setup_repodir()
+          local cache_dir = contexts.env.XDG_CACHE_HOME or "/var/tmp"
+          cache_dir = cache_dir .. "/aur"
+
+          os.execute("mkdir -p " .. cache_dir)
+
           local basename = output.repo:match("([^/]+)$")
-          local repodir = ("/var/tmp/%s"):format(basename)
+          local repodir = ("%s/%s"):format(cache_dir, basename)
           os.execute("sudo pacman -S --needed base-devel git")
 
           if dir_exist(repodir) then
