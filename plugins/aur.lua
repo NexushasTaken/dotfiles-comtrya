@@ -32,7 +32,7 @@ return {
         end
 
         local build_command = ("cd %s && makepkg -s"):format(repodir)
-        local install_command = ("cd %s && makepkg -i --needed"):format(repodir)
+        local install_command = ("cd %s && makepkg -i --needed --noconfirm"):format(repodir)
         local success, exitcode, code = os.execute(build_command)
         -- code == 13 means "A package has already been built." - man makepkg #ERRORS
         if (exitcode == "exit" and code == 13) or success then

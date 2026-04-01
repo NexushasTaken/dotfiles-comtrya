@@ -4,8 +4,9 @@ actions:
   - action: file.link
     from: kanata/
     to: "{{ user.config_dir }}/kanata"
-  - action: plugin
-    dir: plugins/aur.lua
-    actions:
-      aur:
-        repo: https://github.com/NexushasTaken/kanata-bin.git
+    before:
+      - action: plugin
+        dir: plugins/aur.lua
+        actions:
+          aur:
+            repo: https://github.com/NexushasTaken/kanata-bin.git

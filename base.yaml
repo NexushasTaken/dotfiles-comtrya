@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=https://github.com/NexushasTaken/comtrya/raw/refs/heads/personal/jsonschemagen/schema.json
 
 depends:
-  - kanata
+  - modules.kanata.kanata
 
 actions:
   - action: file.link
