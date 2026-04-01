@@ -20,7 +20,7 @@ actions:
     to: "{{ user.config_dir }}/clangd"
     # before:
     #   - action: package.install
-    #     name: clangd
+    #     name: clang
 
   - action: file.link
     from: superfile/
