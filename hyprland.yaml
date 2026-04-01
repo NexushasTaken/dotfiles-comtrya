@@ -35,6 +35,7 @@ actions:
           - hyprland
           - swww
           - hyprshot
+          - cliphist
 
   - action: file.link
     from: dunst/
