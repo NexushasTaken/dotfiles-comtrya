@@ -1,0 +1,6 @@
+actions:
+  - action: plugin
+    path: plugins/aur.lua
+    actions:
+      aur:
+        repo: https://github.com/NexushasTaken/kanata-bin.git
