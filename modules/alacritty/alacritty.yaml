@@ -2,7 +2,7 @@
 
 actions:
   - action: file.link
-    from: alacritty/
+    from: ./
     to: "{{ user.config_dir }}/alacritty"
     before:
       - action: package.install
