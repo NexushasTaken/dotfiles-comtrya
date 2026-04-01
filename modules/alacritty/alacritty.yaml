@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://github.com/NexushasTaken/comtrya/raw/refs/heads/personal/jsonschemagen/schema.json
+
+actions:
+  - action: file.link
+    from: alacritty/
+    to: "{{ user.config_dir }}/alacritty"
+    before:
+      - action: package.install
+        name: alacritty
+        provider: pacman

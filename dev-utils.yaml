@@ -53,14 +53,6 @@ actions:
         provider: pacman
 
   - action: file.link
-    from: alacritty/
-    to: "{{ user.config_dir }}/alacritty"
-    before:
-      - action: package.install
-        name: alacritty
-        provider: pacman
-
-  - action: file.link
     from: foot/
     to: "{{ user.config_dir }}/foot"
     before:
