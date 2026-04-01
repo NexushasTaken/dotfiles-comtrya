@@ -1,0 +1,11 @@
+# yaml-language-server: $schema=https://github.com/NexushasTaken/comtrya/raw/refs/heads/personal/jsonschemagen/schema.json
+
+actions:
+  - action: file.link
+    from: kanata/
+    to: "{{ user.config_dir }}/kanata"
+  - action: plugin
+    dir: plugins/aur.lua
+    actions:
+      aur:
+        repo: https://github.com/NexushasTaken/kanata-bin.git

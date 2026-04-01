@@ -23,8 +23,8 @@ return {
         os.execute("sudo pacman -S --needed base-devel git")
 
         if dir_exist(repodir) then
-          if not is_git_repo("/") then
-            return Error(tostring(("Error: %s is not a valid git repository."):format(repodir)))
+          if not is_git_repo(repodir) then
+            print(("Error: %s is not a valid git repository."):format(repodir))
           end
         else
           local clone = ("git clone %s %s"):format(output.repo, basename, repodir)

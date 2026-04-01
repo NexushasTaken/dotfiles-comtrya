@@ -1,3 +1,5 @@
+# yaml-language-server: $schema=https://github.com/NexushasTaken/comtrya/raw/refs/heads/personal/jsonschemagen/schema.json
+
 variables:
   git-name: "NexushasTaken"
   git-email: "nexushastaken@gmail.com"

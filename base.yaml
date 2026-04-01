@@ -1,3 +1,8 @@
+# yaml-language-server: $schema=https://github.com/NexushasTaken/comtrya/raw/refs/heads/personal/jsonschemagen/schema.json
+
+depends:
+  - kanata
+
 actions:
   - action: file.link
     from: foot/
@@ -144,7 +149,3 @@ actions:
       - action: package.install
         name: waybar
         provider: pacman
-
-  - action: file.link
-    from: kanata/
-    to: "{{ user.config_dir }}/kanata"
