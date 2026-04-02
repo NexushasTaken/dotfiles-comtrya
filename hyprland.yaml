@@ -17,13 +17,22 @@ actions:
         name: waybar
         provider: pacman
 
+  # TODO: extract rofi config into module
+  # - action: file.link
+  #   from: rofi/
+  #   to: "{{ user.config_dir }}/rofi"
+  #   before:
+  #     - action: package.install
+  #       name: rofi
+  #       provider: pacman
+
   - action: file.link
-    from: rofi/
-    to: "{{ user.config_dir }}/rofi"
+    from: tofi/
+    to: "{{ user.config_dir }}/tofi"
     before:
       - action: package.install
-        name: rofi
-        provider: pacman
+        name: tofi
+        provider: paru
 
   - action: file.link
     from: hypr/
