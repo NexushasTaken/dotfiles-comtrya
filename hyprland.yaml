@@ -42,7 +42,7 @@ actions:
         provider: pacman
         list:
           - hyprland
-          - swww
+          - awww
           - hyprshot
           - cliphist
 
