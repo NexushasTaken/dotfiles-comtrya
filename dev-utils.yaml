@@ -44,6 +44,7 @@ actions:
         name: github-cli
         provider: pacman
 
+  # TODO: extract fish config into separate module
   - action: file.link
     from: fish/
     to: "{{ user.config_dir }}/fish"
