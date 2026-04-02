@@ -1,14 +1,4 @@
-local function dir_exist(dirpath)
-  local command = ("cd %s"):format(dirpath)
-  local success, _, _ = os.execute(command)
-  return success == true
-end
-
-local function is_git_repo(dirpath)
-  local command = ("cd %s && git rev-parse --is-inside-work-tree 1> /dev/null"):format(dirpath)
-  local success, _, _ = os.execute(command)
-  return success == true
-end
+local utils = require("plugins.utils")
 
 local function get_command_output(command)
   local handle, errmsg = io.popen(command)
@@ -50,38 +40,6 @@ return {
           return packages_list
         end
 
-        local function setup_repodir()
-          local cache_dir = contexts.env.XDG_CACHE_HOME or "/var/tmp"
-          cache_dir = cache_dir .. "/aur"
-
-          os.execute("mkdir -p " .. cache_dir)
-
-          local basename = output.repo:match("([^/]+)$")
-          local repodir = ("%s/%s"):format(cache_dir, basename)
-          os.execute("sudo pacman -S --needed base-devel git")
-
-          if dir_exist(repodir) then
-            if not is_git_repo(repodir) then
-              print(("Error: %s is not a valid git repository."):format(repodir))
-            end
-          else
-            local clone = ("git clone %s %s"):format(output.repo, basename, repodir)
-            os.execute(clone)
-          end
-
-          return repodir
-        end
-
-        local function install(repodir)
-          local install_command = ("cd %s && makepkg -si --needed"):format(repodir)
-          local success, _, code = os.execute(install_command)
-          if success then
-            print("Command failed with exit code: " .. code)
-          else
-            print("Command exited with exit code: " .. code)
-          end
-        end
-
         local function install2(repodir)
           local build_command = ("cd %s && makepkg -s"):format(repodir)
           local success, exitcode, code = os.execute(build_command)
@@ -93,8 +51,27 @@ return {
             os.execute(install_command)
           end
         end
+        local v = install2
 
-        local repodir = setup_repodir()
+
+        local function install(repodir)
+          local install_command = ("cd %s && makepkg -si --needed"):format(repodir)
+          local success, _, code = os.execute(install_command)
+          if success then
+            print("Command failed with exit code: " .. code)
+          else
+            print("Command exited with exit code: " .. code)
+          end
+        end
+
+        local cache_dir = contexts.env.XDG_CACHE_HOME or "/var/tmp"
+        cache_dir = cache_dir .. "/comtrya/aur"
+
+        local repodir = utils.clone_repo(output.repo, cache_dir, "--depth 1")
+        if not utils.execute("sudo pacman -S --needed base-devel") then
+          print("error: failed to install base-devel")
+          return
+        end
         install(repodir)
       end,
     },
