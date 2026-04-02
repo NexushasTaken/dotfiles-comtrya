@@ -46,6 +46,29 @@ function M.clone_repo(repo_url, directory, extra_args)
   return repodir
 end
 
+function M.string_split(inputstr, sep)
+  if sep == nil then
+    sep = "%s" -- Default to whitespace
+  end
+  local t = {}
+  for str in string.gmatch(inputstr, "([^" .. sep .. "]+)") do
+    table.insert(t, str)
+  end
+  return t
+end
+
+function M.get_command_output(command)
+  local handle, errmsg = io.popen(command)
+  if handle == nil then
+    print(("Error: %s"):format(errmsg))
+    return
+  end
+  local result = tostring(handle:read("*a"))
+  handle:close()
+  return result
+end
+
+
 M.cache_dir = (contexts.env.XDG_CACHE_HOME or "/var/tmp") .. "/comtrya"
 
 return M
