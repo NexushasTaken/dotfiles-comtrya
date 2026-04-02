@@ -1,0 +1,33 @@
+# yaml-language-server: $schema=https://github.com/NexushasTaken/comtrya/raw/refs/heads/personal/jsonschemagen/schema.json
+
+actions:
+  # - action: plugin
+  #   dir: plugins/git.lua
+  #   actions:
+  #     git:
+  #       extra_args: "--depth 1"
+  #       directory: "{{ user.cache_dir }}/comtrya/clone"
+  #       repo_url: https://github.com/vinceliuice/Fluent-gtk-theme.git
+  #   before:
+  #     - action: package.install
+  #       provider: paru
+  #       name: gtk-engine-murrine
+  #     - action: package.install
+  #       provider: pacman
+  #       list:
+  #         - gnome-themes-extra
+  #         - sassc
+  #   after:
+  #     - action: command.run
+  #       command: env
+  #       args:
+  #         - -C
+  #         - "{{ user.cache_dir }}/comtrya/clone/Fluent-gtk-theme.git"
+  #         - ./install.sh
+  #         - -t
+  #         - all
+  #         - -i
+  #         - arch
+  - action: package.install
+    provider: paru
+    name: fluent-gtk-theme-git

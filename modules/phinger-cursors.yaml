@@ -1,0 +1,6 @@
+# yaml-language-server: $schema=https://github.com/NexushasTaken/comtrya/raw/refs/heads/personal/jsonschemagen/schema.json
+
+actions:
+  - action: package.install
+    provider: paru
+    name: phinger-cursors

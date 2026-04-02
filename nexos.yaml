@@ -5,6 +5,9 @@ depends:
   - utils
   - dev-utils
   - tablet
+  - modules.flatery-icon
+  - modules.fluent-gtk-theme
+  - modules.phinger-cursors
 
 actions:
   - action: package.install

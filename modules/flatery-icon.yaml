@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=https://github.com/NexushasTaken/comtrya/raw/refs/heads/personal/jsonschemagen/schema.json
+
+actions:
+  # - action: plugin
+  #   dir: plugins/git.lua
+  #   actions:
+  #     git:
+  #       extra_args: "--depth 1"
+  #       directory: "{{ user.cache_dir }}/comtrya/clone"
+  #       repo_url: https://github.com/cbrnix/Flatery.git
+  #   after:
+  #     - action: command.run
+  #       command: env
+  #       args:
+  #         - -C
+  #         - "{{ user.cache_dir }}/comtrya/clone/Flatery.git"
+  #         - ./install.sh
+  #         - -v
+  #         - all
+  #         - -w
+  - action: package.install
+    provider: paru
+    name: flatery-icon-theme-git
