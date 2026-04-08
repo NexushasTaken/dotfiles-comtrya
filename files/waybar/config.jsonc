@@ -9,9 +9,9 @@
     "hyprland/workspaces",
     "custom/media"
   ],
-  // "modules-center": [
-  //   "hyprland/window"
-  // ],
+  "modules-center": [
+    "hyprland/window"
+  ],
   "modules-right": [
     "mpd",
     "pulseaudio/slider",
