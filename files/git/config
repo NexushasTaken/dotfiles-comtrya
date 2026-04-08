@@ -30,6 +30,8 @@
   required = true
 [protocol "file"]
   allow = always
+[safe]
+  directory = /opt/lampp/htdocs
 [user]
   name = "NexushasTaken" # {< replace_quoted(data.git.name) >}
   email = "nexushastaken@gmail.com" # {< replace_quoted(data.git.email) >}
