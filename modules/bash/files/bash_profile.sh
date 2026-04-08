@@ -50,6 +50,7 @@ function add_path() {
       ;;
   esac
 }
+
 add_path "$ANDROID_HOME/cmdline-tools/latest/bin"
 add_path "$ANDROID_HOME/tools"
 add_path "$ANDROID_HOME/tools/bin"
@@ -69,10 +70,6 @@ add_path "$HOME/dev/deps/flutter/bin"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 add_path "$BUN_INSTALL/bin"
-
-use_local_bin() {
-  export PATH="/usr/local/bin:$PATH"
-}
 
 # ref: https://unix.stackexchange.com/questions/320465/new-tmux-sessions-do-not-source-bashrc-file
 if [ -n "$BASH_VERSION" -a -n "$PS1" ]; then
