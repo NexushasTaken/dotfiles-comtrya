@@ -35,3 +35,8 @@
 [user]
   name = "NexushasTaken" # {< replace_quoted(data.git.name) >}
   email = "nexushastaken@gmail.com" # {< replace_quoted(data.git.email) >}
+# URL Redirection
+# [url "file:///path"]
+#     insteadOf = https://github.com/name/repo
+[url "file:///home/nexus/dev/repos/astal.git"]
+    insteadOf = https://github.com/Aylur/astal.git
