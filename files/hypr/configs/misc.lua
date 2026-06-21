@@ -10,6 +10,5 @@ hl.config({
   },
   debug = {
     disable_logs = true,
-    vfr = false,
   },
 })
