@@ -1,16 +1,8 @@
 #!/usr/bin/env bash
 # vim: ft=bash
 
-# bashrc guard
-if [[ $BASHRC_SOURCED ]] then
-  BASHRC_SOURCED=2
-  return
-fi
-BASHRC_SOURCED=1
-
 set -o vi
 
-alias vimrc="cd ~/.config/nvim"
 alias x="exit"
 alias man="man --nh --nj"
 alias less="less -Rn --mouse"
@@ -39,6 +31,7 @@ alias ealt="exa $exaflags --tree --level=2 --all --long"
 unset exaflags
 
 alias vi="nvim"
+alias vichad="NVIM_APPNAME=nvim-nvchad nvim"
 function vif() {
   local file=$(fzf)
   [[ -n $file ]] && nvim $file || \builtin true

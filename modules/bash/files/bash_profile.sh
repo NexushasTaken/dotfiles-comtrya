@@ -66,6 +66,7 @@ add_path "$HOME/.local/state/gem/ruby/3.0.0/bin"
 add_path "$HOME/.dvm/bin/"
 add_path "$HOME/.nimble/bin"
 add_path "$HOME/dev/deps/flutter/bin"
+add_path "$HOME/.dotnet/tools"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
