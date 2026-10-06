@@ -58,7 +58,7 @@
   @a  @s  @d  @f  h   @j  @k  @l  @;  '
   @spc
   spc XX
-  lctl (layer-switch default)
+  lctl (tap-hold 0 400 XX (layer-switch default))
   XX XX
   @arrows @wheels
   XX XX XX XX
