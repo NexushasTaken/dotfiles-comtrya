@@ -2,6 +2,8 @@
 ---- WINDOWS AND WORKSPACES ----
 --------------------------------
 
+local center_position = { "(monitor_w - window_w) / 2", "(monitor_h - window_h) / 2" }
+
 -- See https://wiki.hypr.land/Configuring/Basics/Window-Rules/
 -- and https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
 
@@ -78,10 +80,56 @@ hl.window_rule({
 })
 
 hl.window_rule({
+  name = "genshin-impact",
+  match = {
+    class = "^(steam_proton|gamescope|gamemoderun)*",
+    title = "^Genshin Impact*",
+  },
+  move = center_position,
+  -- size = { 1280, 720 },
+  workspace = 9,
+  float = true,
+  content = "game",
+})
+
+hl.window_rule({
+  name = "minecraft",
+  match = {
+    class = "^Minecraft.*",
+    title = "^Minecraft.*",
+  },
+  size = { 1280, 720 },
+  workspace = 9,
+  float = true,
+  content = "game",
+})
+
+hl.window_rule({
+  name = "freesmlauncher",
+  match = {
+    class = "^org.freesmlauncher.FreesmLauncher$",
+  },
+  workspace = 9,
+  content = "game",
+})
+
+hl.window_rule({
   name = "aottg2",
   match = {
     class = "^Aottg2Linux.*$",
     title = "^Aottg2$",
+  },
+  size = { 1280, 720 },
+  workspace = 9,
+  float = true,
+  content = "game",
+})
+
+hl.window_rule({
+  name = "terraria",
+  match = {
+    class = "^Terraria.*$",
+    title = "^Terraria.*$",
   },
   size = { 1280, 720 },
   workspace = 9,
@@ -98,6 +146,17 @@ hl.window_rule({
   workspace = 9,
   float = true,
   fullscreen = true,
+  content = "game",
+})
+
+hl.window_rule({
+  name = "waydroid",
+  match = {
+    class = "^Waydroid$",
+    title = "^Waydroid$",
+  },
+  workspace = 9,
+  float = true,
   content = "game",
 })
 

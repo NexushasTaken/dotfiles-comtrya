@@ -15,16 +15,16 @@ hl.config({
 
     follow_mouse  = 1,
 
-    sensitivity   = -1.0, -- -1.0 - 1.0, 0 means no modification.
+    sensitivity   = 0, -- -1.0 - 1.0, 0 means no modification.
     accel_profile = "flat",
 
     touchpad      = {
       natural_scroll = false,
     },
-    tablet = {
-      relative_input = false,
-      left_handed = true,
-    },
+    -- tablet = {
+    --   relative_input = false,
+    --   left_handed = true,
+    -- },
     -- tablettool = {
     --   pressure_range_min = 0.24425989999999997,
     -- },

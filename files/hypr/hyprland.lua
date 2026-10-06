@@ -17,7 +17,7 @@
 -- See https://wiki.hypr.land/Configuring/Basics/Monitors/
 hl.monitor({
   output   = "HDMI-A-1",
-  mode     = "1280x1024@75.3Hz",
+  mode     = "1280x1024@60.0Hz",
   position = "auto",
   scale    = "auto",
 })
@@ -29,7 +29,7 @@ hl.monitor({
 -- Set programs that you use
 Programs = {
   terminal    = "foot",
-  fileManager = "dolphin",
+  fileManager = "caja",
   clipboard = "cliphist list | rofi -dmenu -display-columns 2 | cliphist decode | wl-copy",
 }
 
