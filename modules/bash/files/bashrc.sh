@@ -31,7 +31,6 @@ alias ealt="exa $exaflags --tree --level=2 --all --long"
 unset exaflags
 
 alias vi="nvim"
-alias vichad="NVIM_APPNAME=nvim-nvchad nvim"
 function vif() {
   local file=$(fzf)
   [[ -n $file ]] && nvim $file || \builtin true
