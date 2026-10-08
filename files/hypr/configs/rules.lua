@@ -138,10 +138,21 @@ hl.window_rule({
 })
 
 hl.window_rule({
-  name = "osu",
+  name = "osu-lazer",
   match = {
     class = "^osu!$",
     title = "^osu!$",
+  },
+  workspace = 9,
+  float = true,
+  fullscreen = true,
+  content = "game",
+})
+
+hl.window_rule({
+  name = "osu-stable",
+  match = {
+    class = "^osu!.exe$",
   },
   workspace = 9,
   float = true,
