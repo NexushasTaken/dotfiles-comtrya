@@ -1,3 +1,4 @@
+;; vim: ft=lisp
 (defcfg
   linux-dev-names-exclude (
     "USB OPTICAL MOUSE"
