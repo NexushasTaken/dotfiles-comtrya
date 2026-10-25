@@ -30,6 +30,28 @@ alias elt="exa $exaflags --tree --level=2 --long"
 alias ealt="exa $exaflags --tree --level=2 --all --long"
 unset exaflags
 
+function tmux() {
+  if command tmux has-session 2>/dev/null; then
+    command tmux "$@"
+  else
+    systemd-run --user --scope --quiet -- /usr/bin/tmux "$@"
+  fi
+}
+
+# A tmux server can outlive Hyprland; pull the session's current values
+# (refreshed on attach via update-environment) into this shell each prompt.
+if [[ -n $TMUX ]]; then
+  function __tmux_refresh_env() {
+    # Cheap check first: only ask tmux when the current socket is gone.
+    [[ -S $XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket.sock ]] && return
+    eval "$(command tmux show-environment -s HYPRLAND_INSTANCE_SIGNATURE 2>/dev/null)"
+    eval "$(command tmux show-environment -s WAYLAND_DISPLAY 2>/dev/null)"
+  }
+  if [[ ${PROMPT_COMMAND:=} != *'__tmux_refresh_env'* ]]; then
+    PROMPT_COMMAND="__tmux_refresh_env;${PROMPT_COMMAND#;}"
+  fi
+fi
+
 alias vi="nvim"
 function vif() {
   local file=$(fzf)
