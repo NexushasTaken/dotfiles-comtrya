@@ -2,52 +2,48 @@
 # vim: ft=bash
 alias psql="PAGER='nvim --clean -R' psql"
 
+# usage: codoo [init] [db] [shell] [dev] [paths DIR,DIR...] [-- extra odoo-bin args]
+# ODOO_PATH overrides the odoo checkout; PREFIX is prepended to the command (e.g. PREFIX=echo).
 codoo() {
-  systemctl is-active --quiet postgresql
-  [[ $? -ne 0 ]] && sudo systemctl start postgresql
-  ODOO_PATH=~/odoo-dev
-  local addons_path="--addons-path=$ODOO_PATH/addons,$ODOO_PATH/odoo/addons"
-  local cmd='odoo'
-  local args=''
+  local odoo_path=${ODOO_PATH:-$HOME/dev/repos/odoo}
+  local python=$odoo_path/.venv/bin/python
+  [[ -x $python ]] || python=python3
 
-  add_path() {
-    local path=$(realpath $1)
-    if [[ -d $path ]]; then
-      for dir in $(exa -D $path); do
-        if [[ -f "$path/$dir/__init__.py" ]]; then
-          addons_path+=",$path"
-          return 0
-        fi
-      done
-    fi
+  systemctl is-active --quiet postgresql || sudo systemctl start postgresql || return
+
+  local addons_path=$odoo_path/addons,$odoo_path/odoo/addons
+  local subcmd=() args=()
+
+  # Add a dir to the addons path if it holds at least one module (a subdir with a manifest).
+  _codoo_add_path() {
+    local path
+    path=$(realpath "$1") || return
+    [[ ,$addons_path, == *,$path,* ]] && return
+    compgen -G "$path/*/__manifest__.py" >/dev/null && addons_path+=",$path"
   }
-  add_path .
+  _codoo_add_path .
 
-  for i in $(seq 5); do
+  while (($#)); do
     case $1 in
-      init)
-        args+=" -i all"
+      init)  args+=(-i all) ;;
+      db)    args+=(-d "$(basename "$PWD")") ;;
+      shell) subcmd=(shell) ;;
+      dev)   args+=(--dev=xml,reload,qweb,pdb,werkzeug) ;;
+      paths)
         shift
-      ;;paths)
-        shift
-        for dir in ${1//,/ }; do
-          add_path $dir
-        done
-        shift
-      ;;db)
-        args="$args -d $(basename $(pwd))"
-        shift
-      ;;shell)
-        cmd+=" shell"
-        shift
-      ;;dev)
-        cmd+=" --dev=xml,reload,qweb,pdb,werkzeug"
-        shift
+        local dir
+        for dir in ${1//,/ }; do _codoo_add_path "$dir"; done
+        ;;
+      --) shift; break ;;
+      *) break ;;
     esac
+    shift
   done
+  unset -f _codoo_add_path
 
-  unset add_path
-  $PREFIX $cmd -D $PWD/.cache/odoo $args $addons_path $@
+  # the subcommand (shell) must be odoo-bin's first argument
+  $PREFIX "$python" "$odoo_path/odoo-bin" "${subcmd[@]}" -D "$PWD/.cache/odoo" \
+    "${args[@]}" --addons-path="$addons_path" "$@"
 }
 
 conda-activate() {
