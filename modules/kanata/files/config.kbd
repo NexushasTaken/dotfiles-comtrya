@@ -1,8 +1,6 @@
 ;; vim: ft=lisp
 (defcfg
   linux-dev-names-exclude (
-    "USB OPTICAL MOUSE"
-    "USB OPTICAL MOUSE "
     "HUION 420 Mouse"
     "Evision RGB Keyboard Mouse"
     "OpenTabletDriver Virtual Mouse"
@@ -25,6 +23,7 @@
   lmet rmet
   lalt ralt
   left down up right
+  mlft mrgt mmid
 )
 
 (defvar
@@ -68,6 +67,7 @@
   @lock XX
   @arrows @wheels
   XX XX XX XX
+  mlft mrgt mmid
 )
 
 (deflayer nums
@@ -82,6 +82,7 @@
   XX XX
   XX XX
   XX XX XX XX
+  mlft mrgt mmid
 )
 
 (deflayer arrows
@@ -96,6 +97,7 @@
   XX XX
   XX XX
   XX XX XX XX
+  mlft mrgt mmid
 )
 
 (deflayer wheels
@@ -110,6 +112,7 @@
   XX XX
   XX XX
   XX XX XX XX
+  mlft mrgt mmid
 )
 
 (deflayer default
@@ -124,10 +127,14 @@
   lmet rmet
   lalt ralt
   left down up right
+  mlft mrgt mmid
 )
 
 ;; blocks every key, for cleaning; tap lmet 5 times to unlock
 (deflayermap (lock)
   lmet @unlock
+  mlft mlft
+  mrgt mrgt
+  mmid mmid
   ___  XX
 )
