@@ -49,7 +49,7 @@
 
   spc    (tap-hold-release 0 $hold-time spc (layer-while-held nums))
   arrows (tap-hold-release 0 $hold-time lalt (layer-while-held arrows))
-  wheels (tap-hold-release 0 $hold-time ralt (layer-while-held wheels))
+  wheels (tap-hold-release 0 $hold-time ret (layer-while-held wheels))
 
   lock   (tap-hold 0 1000 XX (layer-switch lock))
   unlock (tap-dance 300 (XX XX XX XX (layer-switch base)))
