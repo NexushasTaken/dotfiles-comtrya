@@ -48,7 +48,7 @@
   mwr (mwheel-right $hold-time 120)
 
   spc    (tap-hold-release 0 $hold-time spc (layer-while-held nums))
-  arrows (tap-hold-release 0 $hold-time lalt (layer-while-held arrows))
+  arrows (tap-hold-release 200 $hold-time bspc (layer-while-held arrows))
   wheels (tap-hold-release 0 $hold-time ret (layer-while-held wheels))
 
   lock   (tap-hold 0 1000 XX (layer-switch lock))
