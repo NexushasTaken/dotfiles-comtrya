@@ -50,6 +50,9 @@
   spc    (tap-hold-release 0 $hold-time spc (layer-while-held nums))
   arrows (tap-hold-release 0 $hold-time lalt (layer-while-held arrows))
   wheels (tap-hold-release 0 $hold-time ralt (layer-while-held wheels))
+
+  lock   (tap-hold 0 1000 XX (layer-switch lock))
+  unlock (tap-dance 300 (XX XX XX XX (layer-switch base)))
 )
 
 (deflayer base
@@ -60,7 +63,7 @@
   @spc
   spc XX
   lctl (tap-hold 0 400 XX (layer-switch default))
-  XX XX
+  @lock XX
   @arrows @wheels
   XX XX XX XX
 )
@@ -115,4 +118,10 @@
   lmet rmet
   lalt ralt
   left down up right
+)
+
+;; blocks every key, for cleaning; tap lmet 5 times to unlock
+(deflayermap (lock)
+  lmet @unlock
+  ___  XX
 )
