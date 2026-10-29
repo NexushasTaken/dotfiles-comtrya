@@ -1,3 +1,3 @@
 return spec({
-	depends("uwsm", "waybar", "hypr", "dunst"),
+	depends("uwsm", "waybar", "hypr", "dunst", "rofi", "tofi"),
 })
