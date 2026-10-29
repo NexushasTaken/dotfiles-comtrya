@@ -1,5 +1,5 @@
 return spec({
 	depends(
-    "clangd", "dev-utils", "utils"
+    "dev-utils", "utils"
   ),
 })
