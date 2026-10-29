@@ -1,3 +1,3 @@
 return spec({
-	depends("btop"),
+	depends("btop", "bat"),
 })

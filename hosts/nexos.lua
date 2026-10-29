@@ -1,5 +1,5 @@
 return spec({
 	depends(
-    "bat", "clangd", "dev-utils", "utils"
+    "clangd", "dev-utils", "utils"
   ),
 })
