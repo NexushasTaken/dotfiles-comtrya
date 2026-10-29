@@ -1,3 +1,3 @@
 return spec({
-	depends("lazygit", "gdb", "tmux"),
+	depends("lazygit", "gdb", "tmux", "inputrc"),
 })
