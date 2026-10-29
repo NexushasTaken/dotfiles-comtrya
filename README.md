@@ -1,13 +1,16 @@
-# Dotfiles - Comtrya
+# dotfiles
 
-## How to install
+My dotfiles, managed by mdot.
 
-**Linux**
-
-```bash
-./scripts/scripts/install-comtrya.sh
-git clone https://github.com/NexushasTaken/dotfiles-comtrya.git $HOME/dotfiles
-cd $HOME/dotfiles
-export PATH="$PATH:$HOME/.cargo/bin"
-comtrya -d . apply
+```sh
+cd ~/dotfiles
+mdot plan
+mdot apply
 ```
+
+## Layout
+
+- `config.lua`: shared variables (`mdot.vars`).
+- `hosts/nexos.lua`: what this machine gets.
+- `specs/`: one directory per program. Without a `spec.lua` it's linked to `~/.config/<name>`.
+- `legacy/`: the old configs
