@@ -53,6 +53,8 @@
 
   lock   (tap-hold 0 1000 XX (layer-switch lock))
   unlock (tap-dance 300 (XX XX XX XX (layer-switch base)))
+  default (tap-dance 300 (XX XX XX XX (layer-switch default)))
+  base    (tap-dance 300 (XX XX XX XX (layer-switch base)))
 )
 
 (deflayer base
@@ -63,7 +65,7 @@
   n   m   ,
   @spc
   spc XX
-  lctl (tap-hold 0 400 XX (layer-switch default))
+  lctl @default
   @lock XX
   @arrows @wheels
   XX XX XX XX
@@ -78,7 +80,7 @@
   n   m   ,
   spc
   XX XX
-  XX (layer-switch default)
+  XX XX
   XX XX
   XX XX
   XX XX XX XX
@@ -93,7 +95,7 @@
   end pgdn ins
   spc
   XX XX
-  XX (layer-switch default)
+  XX XX
   XX XX
   XX XX
   XX XX XX XX
@@ -108,7 +110,7 @@
   n   m   ,
   spc
   XX XX
-  XX (layer-switch default)
+  XX XX
   XX XX
   XX XX
   XX XX XX XX
@@ -123,7 +125,7 @@
   n   m   ,
   spc
   lsft rsft
-  lctl (layer-switch base)
+  lctl @base
   lmet rmet
   lalt ralt
   left down up right
