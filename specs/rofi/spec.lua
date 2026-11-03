@@ -1,4 +1,4 @@
 return {
   package("rofi"),
-  file.link(".", "~/.config/rofi"),
+  file.link("~/.config/rofi"),
 }

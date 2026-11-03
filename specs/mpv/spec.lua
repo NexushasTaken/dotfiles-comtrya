@@ -1,4 +1,4 @@
 return {
   package("mpv"),
-  file.link(".", "~/.config/mpv"),
+  file.link("~/.config/mpv"),
 }

@@ -1,4 +1,4 @@
 return {
   package("uwsm"),
-  file.link(".", "~/.config/uwsm"),
+  file.link("~/.config/uwsm"),
 }

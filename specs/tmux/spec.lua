@@ -1,4 +1,4 @@
 return {
   package("tmux"),
-  file.link(".", "~/.config/tmux"),
+  file.link("~/.config/tmux"),
 }

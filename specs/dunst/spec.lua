@@ -1,4 +1,4 @@
 return {
   package("dunst"),
-  file.link(".", "~/.config/dunst"),
+  file.link("~/.config/dunst"),
 }

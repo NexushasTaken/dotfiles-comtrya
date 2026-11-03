@@ -1,4 +1,4 @@
 return {
   package("tofi"),
-  file.link(".", "~/.config/tofi"),
+  file.link("~/.config/tofi"),
 }

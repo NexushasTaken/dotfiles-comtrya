@@ -1,4 +1,4 @@
 return {
   package("ranger"),
-  file.link(".", "~/.config/ranger"),
+  file.link("~/.config/ranger"),
 }

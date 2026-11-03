@@ -1,4 +1,4 @@
 return {
   package("gdb"),
-  file.link(".", "~/.config/gdb"),
+  file.link("~/.config/gdb"),
 }

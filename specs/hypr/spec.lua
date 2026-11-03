@@ -1,4 +1,4 @@
 return {
   package("hyprland"),
-  file.link(".", "~/.config/hypr"),
+  file.link("~/.config/hypr"),
 }

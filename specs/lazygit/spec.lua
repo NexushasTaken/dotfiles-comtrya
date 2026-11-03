@@ -1,4 +1,4 @@
 return {
   package("lazygit"),
-  file.link(".", "~/.config/lazygit"),
+  file.link("~/.config/lazygit"),
 }

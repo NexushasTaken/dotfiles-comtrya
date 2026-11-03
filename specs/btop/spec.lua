@@ -1,4 +1,4 @@
 return {
   package("btop"),
-  file.link(".", "~/.config/btop"),
+  file.link("~/.config/btop"),
 }

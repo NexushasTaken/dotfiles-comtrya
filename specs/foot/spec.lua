@@ -1,4 +1,4 @@
 return {
   package("foot"),
-  file.link(".", "~/.config/foot"),
+  file.link("~/.config/foot"),
 }
