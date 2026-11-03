@@ -6,5 +6,6 @@ return {
 		"awww",
 		"hyprshot",
 		"cliphist",
+		"network-manager-applet",
 	}),
 }
