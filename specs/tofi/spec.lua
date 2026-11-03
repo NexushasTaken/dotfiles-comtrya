@@ -1,4 +1,6 @@
 return {
-  package("tofi"),
+  package("tofi", {
+    provider = "paru",
+  }),
   file.link("~/.config/tofi"),
 }
