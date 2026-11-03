@@ -5,8 +5,6 @@ return spec({
 		"noto-fonts",
 		"noto-fonts-cjk",
 		"noto-fonts-emoji",
-		"udisks2",
-		"udiskie",
 		"gnome-themes-extra",
 		"eom",
 		"pavucontrol",
