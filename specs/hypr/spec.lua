@@ -6,7 +6,9 @@ return {
 		"awww",
 		"hyprshot",
 		"cliphist",
-		"network-manager-applet",
+		["network-manager-applet"] = {
+			why = "Network Manager systray",
+		},
 		["udisks2"] = {
 			why = "auto-mounting disk",
 		},
