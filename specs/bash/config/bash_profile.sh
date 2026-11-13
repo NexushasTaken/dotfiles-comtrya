@@ -25,6 +25,7 @@ export XDG_STATE_HOME=$HOME/.local/state
 export XDG_DATA_DIRS=/usr/local/share:/usr/share
 export XDG_CONFIG_DIRS=/etc/xdg
 
+export VCPKG_ROOT=$XDG_DATA_HOME/vcpkg
 export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}/go"
 
 function add_path() {
@@ -68,6 +69,7 @@ add_path "$HOME/.nimble/bin"
 add_path "$HOME/dev/deps/flutter/bin"
 add_path "$HOME/.dotnet/tools"
 add_path "$HOME/.dropstone/bin"
+add_path "$VCPKG_ROOT"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
