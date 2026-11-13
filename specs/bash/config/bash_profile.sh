@@ -67,6 +67,7 @@ add_path "$HOME/.dvm/bin/"
 add_path "$HOME/.nimble/bin"
 add_path "$HOME/dev/deps/flutter/bin"
 add_path "$HOME/.dotnet/tools"
+add_path "$HOME/.dropstone/bin"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
