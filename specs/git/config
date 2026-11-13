@@ -15,7 +15,7 @@
   tool = nvimdiff
 [mergetool]
   keepBackup = false
-[mergetool.vimdiff]
+[mergetool.nvimdiff]
   layout = "LOCAL,REMOTE/MERGED"
 [gui]
   fontui = "-family \"Hack Nerd Font\" -size 9 -weight normal -slant roman -underline 0 -overstrike 0"
